@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section id="header" class="section-p1">
+        <a href="index.html"><img src="images/logo.jpg" class="logo" width="180px" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shirts.html">Shirts</a></li>
+                <li><a href="pants.html">Pants</a></li>
+                <li><a href="tshirts.html">T-shirts</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html"><span class="material-symbols-outlined">shopping_bag</span>(<span id="cart-count">0</span>)</a></li>
+                <button id="checkout-btn" onclick="window.location.href='logout.php';">Logout</button>
+            </ul>
+        </div>
+    </section>
+
+    <section id="checkout" class="section-p1">
+        <h2>Checkout</h2>
+        <div class="checkout-container">
+            <div class="address-section">
+                <h3>Delivery Address</h3>
+                <form id="address-form" action="process_checkout.php">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required>
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip" required>
+                </form>
+            </div>
+
+            <div class="payment-section">
+                <h3>Payment Method</h3>
+                <form id="payment-form" action="thankyou.html">
+                    <div class="payment-method">
+                        <input type="radio" id="upi" name="payment" value="UPI" required>
+                        <label for="upi">Cash on Delivery</label>
+                       
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="paytm" name="payment" value="Paytm" required>
+                        <label for="paytm">Paytm</label>
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="phonepe" name="payment" value="PhonePe" required>
+                        <label for="phonepe">PhonePe</label>
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="G-pay" name="payment" value="G-pay" required>
+                        <label for="G-pay">G-pay</label>
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="credit-card" name="payment" value="Credit Card" required>
+                        <label for="credit-card">Credit Card</label>
+                        <div class="card-details" id="credit-card-details">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" name="card-number">
+                            <label for="card-expiry">Expiry Date:</label>
+                            <input type="text" id="card-expiry" name="card-expiry">
+                            <label for="card-cvv">CVV:</label>
+                            <input type="text" id="card-cvv" name="card-cvv">
+                        </div>
+                    </div>
+                    <div class="payment-method">
+                        <input type="radio" id="debit-card" name="payment" value="Debit Card" required>
+                        <label for="debit-card">Debit Card</label>
+                        <div class="card-details" id="debit-card-details">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" name="card-number">
+                            <label for="card-expiry">Expiry Date:</label>
+                            <input type="text" id="card-expiry" name="card-expiry">
+                            <label for="card-cvv">CVV:</label>
+                            <input type="text" id="card-cvv" name="card-cvv">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <table id="order-details">
+                    <!-- Order details will be dynamically injected here -->
+                </table>
+                <h4>Total: <span id="order-total">Rs. 0</span></h4>
+                <button id="place-order-btn" onclick="placeOrder()">Place Order</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

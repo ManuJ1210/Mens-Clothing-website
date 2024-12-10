@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - FRAGGS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Apply animations to elements */
+        #thank-you {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: -100px;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #thank-you h2 {
+            margin-top: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #thank-you p {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        #thank-you button {
+            animation: slideIn 2s ease-in-out;
+            margin-top: 10px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            #thank-you {
+                margin-top: 0;
+                padding: 20px;
+                height: auto;
+            }
+
+            #thank-you button {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header" class="section-p1">
+        <a href="index.html"><img src="images/logo.jpg" class="logo" width="180px" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shirts.html">Shirts</a></li>
+                <li><a href="pants.html">Pants</a></li>
+                <li><a href="tshirts.html">T-shirts</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="cart.html"><span class="material-symbols-outlined">shopping_bag</span>(<span id="cart-count">0</span>)</a></li>
+                <button id="checkout-btn" onclick="window.location.href='logout.php';">Logout</button>
+            </ul>
+        </div>
+    </section>
+
+    <section id="thank-you" class="section-p1">
+        <h2>Thank You for Your Order!</h2>
+        <p>Thank you for choosing FRAGGS. <span style="color: blue; font-weight: 400;">Your order is on the way.</span></p>
+        <p>We appreciate your interest and hope you enjoy your purchase.</p>
+        <button class="tnk-btn" onclick="window.location.href='index.php';">Continue Shopping</button>
+        <button class="tnk-btn" onclick="window.location.href='order-details.html';">Order Details</button>
+    </section>
+
+    <script src="cart.js"></script>
+</body>
+</html>

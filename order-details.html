@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General reset for margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure full height */
+            font-family: Arial, sans-serif; /* Choose a suitable font */
+            box-sizing: border-box; /* Apply box-sizing for better layout control */
+        }
+
+        /* Center align everything in the body */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Change to flex-start to align at the top */
+            padding-top: 20px; /* Add padding to ensure space at the top */
+            background-color: #f4f4f4; /* Add a background color for better visibility */
+        }
+
+        /* Add any custom styles for order details page */
+        #orderDetails {
+            margin-top: 20px;
+            width: 80%; /* Adjust width as needed */
+            max-width: 800px; /* Set maximum width */
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff; /* Ensure background is white */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow for better separation */
+        }
+        #orderDetails img {
+            width: 100px;
+            height: auto;
+        }
+        #orderDetails table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #orderDetails th, #orderDetails td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #orderDetails th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style the back to home button */
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <div id="orderDetails">
+        <!-- Order details will be dynamically inserted here -->
+    </div>
+    <button onclick="backToHome()">Back to Home</button>
+    <script src="order-details.js"></script>
+</body>
+</html>
